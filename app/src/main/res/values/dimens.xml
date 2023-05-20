@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="small_space">10sp</dimen>
+    <dimen name="small_plus_space">15sp</dimen>
+    <dimen name="medium_down_space">18sp</dimen>
+    <dimen name="medium_space">25sp</dimen>
+    <dimen name="big_space">40sp</dimen>
+</resources>
