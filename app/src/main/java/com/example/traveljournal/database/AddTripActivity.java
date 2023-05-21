@@ -1,4 +1,6 @@
-package com.example.traveljournal.entity;
+package com.example.traveljournal.database;
+
+import static com.example.traveljournal.utils.Utils.formatPrice;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
@@ -17,7 +19,6 @@ import java.util.Calendar;
 import java.util.Objects;
 
 public class AddTripActivity extends AppCompatActivity {
-
     private TextView sliderValue;
     private Slider slider;
     private Button pickStartingDateButton;
@@ -47,7 +48,8 @@ public class AddTripActivity extends AppCompatActivity {
         slider = findViewById(R.id.slider);
         saveTripButton = findViewById(R.id.saveTripButton);
 
-        slider.addOnChangeListener((slider, value, fromUser) -> sliderValue.setText((Math.round(value) + " eur")));
+        slider.addOnChangeListener((slider, value, fromUser) -> sliderValue.setText(
+                formatPrice(String.valueOf(Math.round(value))).concat(" eur")));
 
         pickStartingDateButton.setOnClickListener(view -> {
             final Calendar c = Calendar.getInstance();
@@ -117,6 +119,6 @@ public class AddTripActivity extends AppCompatActivity {
         editTextTripName.setText(tripName);
         editTextDestination.setText(destination);
         slider.setValue(Float.parseFloat(String.valueOf(price)));
-        sliderValue.setText(String.valueOf(price).concat(" eur"));
+        sliderValue.setText(formatPrice(String.valueOf(price)).concat(" eur"));
     }
 }

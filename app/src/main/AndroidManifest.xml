@@ -20,14 +20,14 @@
             android:name=".AddWordActivity"
             android:exported="false" />
         <activity
-            android:name=".entity.AddTripActivity"
+            android:name=".database.AddTripActivity"
             android:exported="false" />
         <activity
             android:name=".HomeActivity"
             android:exported="false"
             android:label="Home" />
         <activity
-            android:name=".entity.TripsActivity"
+            android:name=".database.TripsActivity"
             android:exported="false"
             android:label="Home" />
         <activity

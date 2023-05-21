@@ -1,4 +1,4 @@
-package com.example.traveljournal.entity;
+package com.example.traveljournal.database;
 
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;

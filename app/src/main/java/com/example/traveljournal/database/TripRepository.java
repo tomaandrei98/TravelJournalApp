@@ -1,4 +1,4 @@
-package com.example.traveljournal.entity;
+package com.example.traveljournal.database;
 
 import android.app.Application;
 
@@ -32,5 +32,9 @@ public class TripRepository {
 
     public Trip findTripByName(String name) {
         return tripDao.findTripByName(name);
+    }
+
+    public void delete(Trip trip) {
+        tripDao.delete(trip);
     }
 }

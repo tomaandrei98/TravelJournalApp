@@ -1,4 +1,4 @@
-package com.example.traveljournal.entity;
+package com.example.traveljournal.database;
 
 import android.app.Application;
 
@@ -35,5 +35,9 @@ public class TripViewModel extends AndroidViewModel {
 
     public Trip findTripByName(String name) {
         return tripRepository.findTripByName(name);
+    }
+
+    public void delete(Trip trip) {
+        tripRepository.delete(trip);
     }
 }
