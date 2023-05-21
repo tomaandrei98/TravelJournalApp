@@ -1,5 +1,7 @@
 package com.example.traveljournal;
 
+import static com.example.traveljournal.utils.Utils.formatPrice;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -7,7 +9,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.traveljournal.entity.Trip;
+import com.example.traveljournal.database.Trip;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -36,16 +38,18 @@ public class TripsAdapter extends RecyclerView.Adapter<TripsViewHolder> {
         Trip currentTrip = trips.get(position);
         holder.getTextViewTripName().setText(currentTrip.getName());
         holder.getTextViewTripDestination().setText(currentTrip.getDestination());
-        holder.getTextViewTripPrice().setText(String.valueOf(currentTrip.getPrice()));
+        holder.getTextViewTripPrice().setText(formatPrice(String.valueOf(currentTrip.getPrice())));
         holder.getTextViewTripCurrency().setText(R.string.currency);
         holder.getItemTrip().setBackgroundResource(R.color.white);
         if (currentTrip.getPictureUrl() != null && currentTrip.getPictureUrl().length() > 0) {
             Picasso.get().load(currentTrip.getPictureUrl())
-                    .placeholder(R.drawable.android)
+//                    .placeholder(R.drawable.android)
                     .error(R.drawable.close)
                     .into(holder.getImageViewTrip());
         }
     }
+
+
 
     @Override
     public int getItemCount() {

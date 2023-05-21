@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.traveljournal.entity.Trip;
+import com.example.traveljournal.database.Trip;
 
 import java.util.List;
 

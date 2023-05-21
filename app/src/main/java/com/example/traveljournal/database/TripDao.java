@@ -1,7 +1,8 @@
-package com.example.traveljournal.entity;
+package com.example.traveljournal.database;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
+import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
@@ -21,4 +22,7 @@ public interface TripDao {
 
     @Query("SELECT * FROM trips WHERE name = :name")
     Trip findTripByName(String name);
+
+    @Delete
+    void delete(Trip trip);
 }
