@@ -14,11 +14,8 @@
         android:theme="@style/Theme.TravelJournal"
         tools:targetApi="31">
         <activity
-            android:name=".WordsActivity"
-            android:exported="false" />
-        <activity
-            android:name=".AddWordActivity"
-            android:exported="false" />
+            android:name=".single.ShowTripActivity"
+            android:exported="false"/>
         <activity
             android:name=".database.AddTripActivity"
             android:exported="false" />

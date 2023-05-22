@@ -3,7 +3,6 @@ package com.example.traveljournal.database;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,6 +15,7 @@ import com.example.traveljournal.ClickListener;
 import com.example.traveljournal.R;
 import com.example.traveljournal.RecyclerTouchListener;
 import com.example.traveljournal.TripsAdapter;
+import com.example.traveljournal.single.ShowTripActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
@@ -88,8 +88,11 @@ public class TripsActivity extends AppCompatActivity {
                 new ClickListener() {
                     @Override
                     public void onClick(View view, int position) {
-//                        Toast.makeText(TripsActivity.this, "Single Click on position:" + position,
-//                                Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(TripsActivity.this, ShowTripActivity.class);
+                        intent.putExtra("tripName", trips.get(position).getName());
+                        intent.putExtra("destination", trips.get(position).getDestination());
+                        intent.putExtra("price", trips.get(position).getPrice());
+                        startActivity(intent);
                     }
 
                     @Override
