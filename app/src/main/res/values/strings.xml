@@ -30,4 +30,7 @@
     <string name="end_date">end date</string>
     <string name="pick_end_date">Pick End Date</string>
     <string name="city_break">City Break</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="back">Back</string>
 </resources>
